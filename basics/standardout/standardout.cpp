@@ -16,6 +16,10 @@ int factorial(int x) {
     return x * factorial(x - 1);
 }
 
+void sayHello(std::string name) {
+    std::cout << "Hello, " << name << std::endl;
+}
+
 int main() {
     int val = get_value();
     const int x = 3;
@@ -24,5 +28,6 @@ int main() {
     std::cout << "The value from the function is " << val << std::endl;
     std::cout << "The sum of " << x << " and " << y << " is " << sum << std::endl;
     std::cout << y << "! = " << factorial(y) << std::endl;
+    sayHello("Dave");
     return 0;
 }
