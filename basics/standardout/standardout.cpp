@@ -8,6 +8,14 @@ int add(int x, int y) {
     return x + y;
 }
 
+int factorial(int x) {
+    if (x == 1) {
+        return 1;
+    }
+
+    return x * factorial(x - 1);
+}
+
 int main() {
     int val = get_value();
     const int x = 3;
@@ -15,5 +23,6 @@ int main() {
     int sum = add(x, y);
     std::cout << "The value from the function is " << val << std::endl;
     std::cout << "The sum of " << x << " and " << y << " is " << sum << std::endl;
+    std::cout << y << "! = " << factorial(y) << std::endl;
     return 0;
 }
