@@ -21,6 +21,12 @@ int factorial(int x) {
     return x * factorial(x - 1);
 }
 
+void swap(int *x, int *y) {
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
 int main() {
     greet("Dean");
     int x = 5;
@@ -36,4 +42,9 @@ int main() {
         The quotient of 5 and  39 is  0.128205
         5! = 120
     */
+
+   std::cout << "x is now " << x << " and y is " << y << std::endl;
+   std::cout << "Swapping" << std::endl;
+   swap(&x, &y);
+   std::cout << "x is now " << x << " and y is " << y << std::endl;
 }
