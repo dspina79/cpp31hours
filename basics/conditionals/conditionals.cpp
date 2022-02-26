@@ -1,5 +1,10 @@
 #include <iostream>
 
+int get_max(int x, int y) {
+    // using ternary operator
+    return x > y ? x : y;
+}
+
 int main() {
     int x = 10;
     int y = 20;
@@ -33,6 +38,12 @@ int main() {
         }
     }
 
+    const int a = 15;
+    const int b = 102;
+    const int max_a_b = get_max(a, b);
+
+    std::cout << "The max of " << a << " and " << b << " is " << max_a_b << std::endl;
+
     return 0;
 }
 
@@ -44,4 +55,5 @@ int main() {
         x is greater than 1 and less than y
         x is greater than 1 or it is greater than y
         x is even
+        The max of 15 and 102 is 102
 */
