@@ -2,6 +2,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <array>
+#include <string>
 
 using namespace std;
 
@@ -13,15 +14,14 @@ void printarray(int arr[], int arrSize) {
     cout << endl;
 }
 
-int main() {
-    const int STARTER_BASE = 9;
-    int currentBase = STARTER_BASE;
+void runTriangle(int starterBaseSize) {
+    int currentBase = starterBaseSize;
     const int MAX_NUM = 10;
-    int collection[STARTER_BASE];
+    int collection[currentBase];
 
     srand(time(nullptr));
 
-    for (int i = 0; i < STARTER_BASE; i++) {
+    for (int i = 0; i < starterBaseSize; i++) {
         int x = rand()/((RAND_MAX + 1u)/MAX_NUM);
         // found that the first number was always 0
         if (i == 0 && x == 0) {
@@ -30,7 +30,7 @@ int main() {
         collection[i] = x;
     }
 
-    printarray(collection, STARTER_BASE);
+    printarray(collection, starterBaseSize);
     
     while(currentBase > 1) {
         int tempCollection[currentBase--];
@@ -44,6 +44,13 @@ int main() {
         
         printarray(collection, currentBase);
     }
-    
+}
+
+int main() {
+    string strStarterVal;
+    cout << "Enter a starter base size: ";
+    getline(cin, strStarterVal);
+    int starterSize = stoi(strStarterVal);
+    runTriangle(starterSize);
     return 0;
 }
