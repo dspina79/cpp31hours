@@ -40,3 +40,14 @@ int main() {
         cout << "This will print out no matter what..." << endl;
     } while(false);
 }
+
+/* 
+    Output:
+    x is less than y
+    1 2 3 4 5 6 7 8 9 10 
+    Harriet
+    The value of v is: 13
+    The value of v is: 12
+    The value of v is: 11
+    This will print out no matter what...
+*/
