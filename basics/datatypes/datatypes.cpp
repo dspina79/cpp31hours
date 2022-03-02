@@ -15,7 +15,6 @@ int main() {
 }
 
 /* 
-
     Outputs:
         Size of int = 4
         Size of float = 4
