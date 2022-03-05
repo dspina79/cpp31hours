@@ -62,6 +62,7 @@ Person::Person(string firstName, string lastName) {
 Person::~Person() {
     cout << "Removing " << this->getFullName() << endl;
     Person::numberOfPersons--;
+    Person::printPopulation();
 }
 
 void Person::printPopulation() {
@@ -75,6 +76,13 @@ void Person::printPopulation() {
 }
 
 int main() {
-
+    Person lou("Lou", "Miller");
+    lou.introduce();
+    Person::printPopulation();
+    Person linda("Linda", "Seridan");
+    linda.setEmailAddress("linda@nowhere.net");
+    linda.setAge(30);
+    linda.introduce();
+    Person::printPopulation();
     return 0;
 }
