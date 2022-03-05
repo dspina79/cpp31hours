@@ -86,3 +86,15 @@ int main() {
     Person::printPopulation();
     return 0;
 }
+
+/*
+    Output
+    Hello, I am Lou Miller
+    There is just one person.
+    Hello, I am Linda Seridan
+    There are 2 people.
+    Removing Linda Seridan
+    There is just one person.
+    Removing Lou Miller
+    There is nobody...
+*/
