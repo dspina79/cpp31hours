@@ -19,7 +19,7 @@ class Animal {
 };
 
 void Animal::speak() {
-    cout << this->name << "says nothing..." << endl;
+    cout << this->name << " says nothing..." << endl;
 }
 
 Animal::Animal() {
@@ -37,5 +37,15 @@ Animal::~Animal() {
 }
 
 int main() {
+    Animal gooper("Gooper", 1);
+    gooper.speak();
     return 0;
 }
+
+
+/* 
+    Output
+    Gooper says nothing...
+    Gooper dies.
+
+*/
