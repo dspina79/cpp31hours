@@ -36,9 +36,23 @@ Animal::~Animal() {
     cout << this->name << " dies." << endl;
 }
 
+class Cat : public Animal {
+    public:
+        Cat(string, int);
+        void meow();
+};
+
+Cat::Cat(string name, int age) : Animal(name, age) {}
+
+void Cat::meow() {
+    cout << this->getName() << " meows!" << endl;
+}
+
 int main() {
     Animal gooper("Gooper", 1);
     gooper.speak();
+    Cat kitty("Kitty", 1);
+    kitty.meow();
     return 0;
 }
 
