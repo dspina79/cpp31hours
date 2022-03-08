@@ -36,6 +36,19 @@ Animal::~Animal() {
     cout << this->name << " dies." << endl;
 }
 
+class Amoeba : public Animal {
+    private:
+        int numberOfCilia;
+    public:
+        int getNumberOfCilia() { return this->numberOfCilia; }
+        void setNumberOfCilia(int cilia) { this->numberOfCilia = cilia; }
+        Amoeba();
+};
+
+Amoeba::Amoeba() : Animal("Amoeba", 0) {
+    this->numberOfCilia = 0;
+}
+
 class Cat : public Animal {
     public:
         Cat(string, int);
@@ -51,6 +64,11 @@ void Cat::meow() {
 int main() {
     Animal gooper("Gooper", 1);
     gooper.speak();
+
+    Amoeba todd;
+    todd.setNumberOfCilia(5);
+    cout << todd.getName() << " has " << todd.getNumberOfCilia() << " cilia." << endl;
+
     Cat kitty("Kitty", 1);
     kitty.meow();
     return 0;
@@ -60,6 +78,9 @@ int main() {
 /* 
     Output
     Gooper says nothing...
+    Amoeba has 5 cilia.
+    Kitty meows!
+    Kitty dies.
+    Amoeba dies.
     Gooper dies.
-
 */
