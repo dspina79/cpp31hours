@@ -54,14 +54,22 @@ Amoeba::Amoeba() : Animal("Amoeba", 0) {
 class Cat : public Animal {
     public:
         Cat(string, int);
-        void meow();
+        virtual void meow() { cout << "Meow!" << endl; }
         string getAnimalType() { return "Cat"; }
 };
 
 Cat::Cat(string name, int age) : Animal(name, age) {}
 
-void Cat::meow() {
-    cout << this->getName() << " meows!" << endl;
+class Lion : public Cat {
+    private:
+        int maneLength;
+    public:
+        Lion(string, int, int);
+        void meow() { cout << "ROAR!!!" << endl; }
+};
+
+Lion::Lion(string name, int age, int mane) : Cat(name, age) {
+    this->maneLength = mane;
 }
 
 int main() {
@@ -79,18 +87,27 @@ int main() {
     kitty.meow();
     cout << kitty.getName() << " is a " << kitty.getAnimalType() << endl;
 
+    Lion chester("Chester", 2, 4);
+    chester.meow();
+    cout << chester.getName() << " is a " << chester.getAnimalType() << endl;
+
+
     return 0;
 }
 
 
 /* 
     Output
-    Gooper says nothing...
-    Gooper is a Animal
-    Amoeba has 5 cilia.
-    Amoeba is a Amoeba
-    Kitty meows!
-    Kitty is a Cat
-    Kitty dies.
-    Amoeba dies.
-    Gooper dies.*/
+        Gooper says nothing...
+        Gooper is a Animal
+        Amoeba has 5 cilia.
+        Amoeba is a Amoeba
+        Meow!
+        Kitty is a Cat
+        ROAR!!!
+        Chester is a Cat
+        Chester dies.
+        Kitty dies.
+        Amoeba dies.
+        Gooper dies.    
+*/
