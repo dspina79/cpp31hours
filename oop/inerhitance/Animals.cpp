@@ -91,6 +91,11 @@ int main() {
     chester.meow();
     cout << chester.getName() << " is a " << chester.getAnimalType() << endl;
 
+    // another way of class instantiation
+    Lion *anotherLion = new Lion("Violet", 2, 3);
+    anotherLion->meow();
+    cout << anotherLion->getName() << " is a " << anotherLion->getAnimalType() << endl;
+
 
     return 0;
 }
