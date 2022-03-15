@@ -81,5 +81,11 @@ class Person {
         string _lastName;
         string _middleName;
         string _dob;
-        Address *addr;
+        Address addr;
+    public:
+        string getFirstName() { return _firstName; }
+        string getLastName() { return _lastName; }
+        string getMiddleName() { return _middleName; }
+        string getDateOfBirth() { return _dob; }
+        Address getAddress() { return addr; }
 };
