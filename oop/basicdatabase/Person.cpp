@@ -81,13 +81,13 @@ class Person {
         string _lastName;
         string _middleName;
         string _dob;
-        Address addr;
+        Address *addr;
     public:
         string getFirstName() { return _firstName; }
         string getLastName() { return _lastName; }
         string getMiddleName() { return _middleName; }
         string getDateOfBirth() { return _dob; }
-        Address getAddress() { return addr; }
+        Address getAddress() { return *addr; }
         void setFirstName(string firstName) { _firstName = firstName; }
         void setLastName(string lastName) { _lastName = lastName; }
         void setMiddleName(string middleName) { _middleName = middleName; }
@@ -103,8 +103,8 @@ Person::Person() {
     this->_lastName = "";
     this->_middleName = "";
     this->_dob = "";
+    this->addr = new Address();
 }
-
 
 Person::Person(string firstName, string lastName) {
     this->_firstName = firstName;
