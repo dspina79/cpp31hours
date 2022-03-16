@@ -88,4 +88,39 @@ class Person {
         string getMiddleName() { return _middleName; }
         string getDateOfBirth() { return _dob; }
         Address getAddress() { return addr; }
+        void setFirstName(string firstName) { _firstName = firstName; }
+        void setLastName(string lastName) { _lastName = lastName; }
+        void setMiddleName(string middleName) { _middleName = middleName; }
+        void setDateOfBirth(string dob) { _dob = dob; }
+        string getFullName();
+        Person();
+        Person(string, string);
+        ~Person();
 };
+
+Person::Person() {
+    this->_firstName = "";
+    this->_lastName = "";
+    this->_middleName = "";
+    this->_dob = "";
+}
+
+
+Person::Person(string firstName, string lastName) {
+    this->_firstName = firstName;
+    this->_lastName = lastName;
+    this->_middleName = "";
+    this->_dob = "";
+}
+
+Person::~Person() {
+    cout << this->getFullName() << " destroyed." << endl;
+}
+
+string Person::getFullName() {
+    if (this->_middleName != "") {
+        return this->_firstName +  " " + this->_middleName + " " + this->_lastName;
+    }
+
+    return this->_firstName +  " " + this->_lastName;
+}
