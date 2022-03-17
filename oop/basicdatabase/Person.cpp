@@ -28,6 +28,7 @@ class Address {
         Address();
         Address(string, string, string, string);
         Address(string, string, string, string, string, string);
+        ~Address();
 };
 
 Address::Address() {
@@ -57,6 +58,10 @@ Address::Address(string address1, string address2, string city, string stateProv
     this->_countryCode = countryCode;
 }
 
+Address::~Address() {
+    cout << "Destroying address" << endl;
+}
+
 void Address::printAddress() {
     string delim = ", ";
     cout << this->_address1 << endl;
@@ -81,17 +86,23 @@ class Person {
         string _lastName;
         string _middleName;
         string _dob;
+        string _email;
+        string _phone;
         Address *addr;
     public:
         string getFirstName() { return _firstName; }
         string getLastName() { return _lastName; }
         string getMiddleName() { return _middleName; }
         string getDateOfBirth() { return _dob; }
+        string getEmailAddress() { return _email; }
+        string getPhoneNumber() { return _phone; }
         Address getAddress() { return *addr; }
         void setFirstName(string firstName) { _firstName = firstName; }
         void setLastName(string lastName) { _lastName = lastName; }
         void setMiddleName(string middleName) { _middleName = middleName; }
         void setDateOfBirth(string dob) { _dob = dob; }
+        void setEmailAddress(string emailAddress) { _email = emailAddress; }
+        void setPhoneNumber(string phoneNumber) { _phone = phoneNumber; }
         string getFullName();
         Person();
         Person(string, string);
@@ -103,6 +114,8 @@ Person::Person() {
     this->_lastName = "";
     this->_middleName = "";
     this->_dob = "";
+    this->_email = "";
+    this->_phone = "";
     this->addr = new Address();
 }
 
@@ -111,6 +124,8 @@ Person::Person(string firstName, string lastName) {
     this->_lastName = lastName;
     this->_middleName = "";
     this->_dob = "";
+    this->_email = "";
+    this->_phone = "";
 }
 
 Person::~Person() {
