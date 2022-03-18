@@ -126,6 +126,7 @@ Person::Person(string firstName, string lastName) {
     this->_dob = "";
     this->_email = "";
     this->_phone = "";
+    this->addr = new Address();
 }
 
 Person::~Person() {
