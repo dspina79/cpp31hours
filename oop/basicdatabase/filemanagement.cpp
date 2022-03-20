@@ -1,8 +1,23 @@
 #include <iostream>
 #include <fstream>
 #include "Person.cpp"
+#include <vector>
 
 using namespace std;
+
+class RoughPersonSerializer {
+    public:
+        vector<string> serializePerson(Person* p);
+};
+
+vector<string> RoughPersonSerializer(Person* p) {
+    vector<string> f;
+    f.push_back(p->getFirstName());
+    f.push_back(p->getLastName());
+    f.push_back(p->getMiddleName());
+    f.push_back(p->getEmailAddress());
+    return f;
+}
 
 class DataManager {
     private:
