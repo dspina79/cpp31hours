@@ -103,6 +103,7 @@ class Person {
         void setDateOfBirth(string dob) { _dob = dob; }
         void setEmailAddress(string emailAddress) { _email = emailAddress; }
         void setPhoneNumber(string phoneNumber) { _phone = phoneNumber; }
+        void setAddress(Address* address) { addr = address; }
         string getFullName();
         Person();
         Person(string, string);
