@@ -17,6 +17,15 @@ vector<string> RoughPersonSerializer::serializePerson(Person* p) {
     f.push_back(p->getLastName());
     f.push_back(p->getMiddleName());
     f.push_back(p->getEmailAddress());
+    f.push_back(p->getPhoneNumber());
+    f.push_back(p->getDateOfBirth());
+    Address addr = p->getAddress();
+    f.push_back(addr.getAddressLine1());
+    f.push_back(addr.getAddressLine2());
+    f.push_back(addr.getCity());
+    f.push_back(addr.getStateProvince());
+    f.push_back(addr.getPostalCode());
+    f.push_back(addr.getCountryCode());
     return f;
 }
 
@@ -25,11 +34,21 @@ Person* RoughPersonSerializer::deserializePerson(vector<string> source) {
     string lastName = source[1];
     string middleName = source[2];
     string emailAddress = source[3];
-
+    string phone = source[4];
+    string dob = source[5];
+    string address1 = source[6];
+    string address2 = source[7];
+    string city = source[8];
+    string state = source[9];
+    string postalCode = source[10];
+    stirng country = source[11];
+    Adddress addr(address1, address2, city, state, postalCode, country);
     Person p(firstName, lastName);
     p.setMiddleName(middleName);
     p.setEmailAddress(emailAddress);
-
+    p.setPhoneNumber(phone);
+    p.setDateOfBirth(dob);
+    p.setAddress(&addr);
     return &p;
 }
 
