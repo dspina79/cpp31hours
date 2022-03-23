@@ -41,8 +41,8 @@ Person* RoughPersonSerializer::deserializePerson(vector<string> source) {
     string city = source[8];
     string state = source[9];
     string postalCode = source[10];
-    stirng country = source[11];
-    Adddress addr(address1, address2, city, state, postalCode, country);
+    string country = source[11];
+    Address addr(address1, address2, city, state, postalCode, country);
     Person p(firstName, lastName);
     p.setMiddleName(middleName);
     p.setEmailAddress(emailAddress);
@@ -97,8 +97,8 @@ void DataManager::writeToFile(Person* p) {
     RoughPersonSerializer s;
     vector<string> dp = s.serializePerson(p);
     this->_filestream.open(this->_filename);
-    while (dp.size() > 0) {
-        this->_filestream << dp.pop_back();
+    for (int i = 0; i < dp.size(); i++) {
+        this->_filestream << dp[i];
     } 
     this->_filestream.close();  
 }
