@@ -103,16 +103,18 @@ int main() {
 
 /* 
     Output
-        Gooper says nothing...
-        Gooper is a Animal
-        Amoeba has 5 cilia.
-        Amoeba is a Amoeba
-        Meow!
-        Kitty is a Cat
-        ROAR!!!
-        Chester is a Cat
-        Chester dies.
-        Kitty dies.
-        Amoeba dies.
-        Gooper dies.    
+            Gooper says nothing...
+            Gooper is a Animal
+            Amoeba has 5 cilia.
+            Amoeba is a Amoeba
+            Meow!
+            Kitty is a Cat
+            ROAR!!!
+            Chester is a Cat
+            ROAR!!!
+            Violet is a Cat
+            Chester dies.
+            Kitty dies.
+            Amoeba dies.
+            Gooper dies.
 */
