@@ -98,7 +98,7 @@ void DataManager::writeToFile(Person* p) {
     vector<string> dp = s.serializePerson(p);
     this->_filestream.open(this->_filename);
     for (int i = 0; i < dp.size(); i++) {
-        this->_filestream << dp[i];
+        this->_filestream << dp[i] << endl; 
     } 
     this->_filestream.close();  
 }

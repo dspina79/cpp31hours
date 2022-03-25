@@ -9,5 +9,6 @@ int main() {
     DataManager mgr("./lib/data.txt");
     mgr.writeToFile("Hello World!");
     mgr.writeToFile(&pete);
+
     return 0;
 }
