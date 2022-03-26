@@ -9,7 +9,13 @@ class RoughPersonSerializer {
     public:
         vector<string> serializePerson(Person* p);
         Person* deserializePerson(vector<string> s);
+        vector<Person> deserializePersons(vector<string> s);
 };
+
+vector<Person> RoughPersonSerializer::deserializePersons(vector<string> s) {
+    // to be implemented;
+    return vector<Person>;
+}
 
 vector<string> RoughPersonSerializer::serializePerson(Person* p) {
     vector<string> f;

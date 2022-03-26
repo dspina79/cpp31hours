@@ -7,7 +7,6 @@ int main() {
     Address peteAddress("123 Anywhere Drive", "Rochester", "NY", "14623");
     pete.setAddress(&peteAddress);
     DataManager mgr("./lib/data.txt");
-    mgr.writeToFile("Hello World!");
     mgr.writeToFile(&pete);
 
     return 0;
