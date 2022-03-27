@@ -13,8 +13,26 @@ class RoughPersonSerializer {
 };
 
 vector<Person> RoughPersonSerializer::deserializePersons(vector<string> s) {
-    // to be implemented;
-    return vector<Person>;
+    // starting with just the considered object length
+    Person p;
+    
+    p.setFirstName(s[0]);
+    p.setLastName(s[1]);
+    p.setMiddleName(s[2]);
+    p.setEmailAddress(s[3]);
+    p.setPhoneNumber(s[4]);
+    p.setDateOfBirth(s[5]);
+    Address addr;
+    addr.setAddress1(s[6]);
+    addr.setAddress2(s[7]);
+    addr.setCity(s[8]);
+    addr.setStateProvince(s[9]);
+    addr.setPostalCode(s[10]);
+    addr.setCountryCode(s[11]);
+    p.setAddress(&addr);
+    vector<Person> persons;
+    persons.push_back(p);
+    return persons;
 }
 
 vector<string> RoughPersonSerializer::serializePerson(Person* p) {
